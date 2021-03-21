@@ -5,7 +5,7 @@ Example code for Go generics.
 ## Usage
 
 ```
-$ go build -gcflags=-G=3  
+$ go build -gcflags=-G=3
 ```
 
 ## Requirements
