@@ -12,8 +12,9 @@ type Addable interface {
 
 func generator[T Addable](a T, v T) func() T {
     return func() T {
+        r := a
         a = a + v
-        return a
+        return r
     }
 }
 
