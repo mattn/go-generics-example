@@ -10,15 +10,15 @@ type Addable interface {
 		float32, float64, complex64, complex128
 }
 
-func generator[T Addable](a T) func() T {
+func generator[T Addable](a T, v T) func() T {
     return func() T {
-        a = a + 1
+        a = a + v
         return a
     }
 }
 
 func main() {
-    f := generator(0)
+    f := generator(0, 1)
     fmt.Println(f())
     fmt.Println(f())
     fmt.Println(f())
