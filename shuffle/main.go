@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "time"
     "math/rand"
 )
 
@@ -14,6 +15,8 @@ func shuffle[T any](a []T) {
 }
 
 func main() {
+    rand.Seed(time.Now().UnixNano())
+
     vi := []int{1,2,3,4,5,6,7,8,9,10}
     shuffle(vi)
     fmt.Println(vi)
