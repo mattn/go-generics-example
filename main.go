@@ -56,6 +56,30 @@ func reduceFunc[T any](a []T, f func(T, T) T, initial interface{}) T {
     return reduce(a, f, initial.(T), 0, 1, l)
 }
 
+type comparable interface {
+	type int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64, uintptr, float32, float64
+}
+
+func max[T comparable](a []T) T {
+    m := a[0]
+    for _, v := range a {
+        if m < v {
+            m = v
+        }
+    }
+    return m
+}
+
+func min[T comparable](a []T) T {
+    m := a[0]
+    for _, v := range a {
+        if m > v {
+            m = v
+        }
+    }
+    return m
+}
+
 func main() {
     // using filterFunc
     vi := []int{1,2,3,4,5,6}
@@ -78,5 +102,15 @@ func main() {
     result := reduceFunc(vi, func(lhs, rhs int) int {
         return lhs + rhs
     }, 1)
+    fmt.Println(result)
+
+    // using max
+    vi = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    result = max(vi)
+    fmt.Println(result)
+
+    // using min
+    vi = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    result = min(vi)
     fmt.Println(result)
 }
