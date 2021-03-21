@@ -80,6 +80,24 @@ func min[T comparable](a []T) T {
     return m
 }
 
+func permInternal[T any](a []T, f func([]T), i int) {
+    if i > len(a) {
+        f(a)
+        return
+    }
+    permInternal(a, f, i+1)
+    for j := i + 1; j < len(a); j++ {
+        a[i], a[j] = a[j], a[i]
+        permInternal(a, f, i+1)
+        a[i], a[j] = a[j], a[i]
+    }
+}
+
+func perm[T any](a []T, f func([]T)) {
+	permInternal(a, f, 0)
+
+}
+
 func main() {
     // using filterFunc
     vi := []int{1,2,3,4,5,6}
@@ -104,6 +122,11 @@ func main() {
     }, 1)
     fmt.Println(result)
 
+    s := reduceFunc(vs, func(lhs, rhs string) string {
+        return lhs + rhs
+    }, "a")
+    fmt.Println(s)
+
     // using max
     vi = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
     result = max(vi)
@@ -113,4 +136,10 @@ func main() {
     vi = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
     result = min(vi)
     fmt.Println(result)
+
+    // using perm
+    vi = []int{1, 2, 3}
+    perm(vi, func(a []int) {
+        fmt.Println(a)
+    })
 }
