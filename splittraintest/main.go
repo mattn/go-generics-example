@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "time"
     "math/rand"
 )
 
@@ -22,6 +23,8 @@ func splitTrainTest[T any](a []T, f float64) ([]T, []T) {
 }
 
 func main() {
+    rand.Seed(time.Now().UnixNano())
+
     vi := []int{1,2,3,4,5,6,7,8,9,10}
     train, test := splitTrainTest(vi, 0.75)
     fmt.Println(train, test)
