@@ -13,10 +13,10 @@ func ternaryOp[T any](s bool, t func() T, f func() T) T {
 
 func main() {
 	fmt.Println(ternaryOp(4 < 5, func() string {
-		fmt.Println("left excuted")
+		fmt.Println("left evaluated")
 		return "less"
 	}, func() string {
-		fmt.Println("right excuted")
+		fmt.Println("right evaluated")
 		return "greater"
 	}))
 }
