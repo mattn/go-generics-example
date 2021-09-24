@@ -18,4 +18,5 @@ func sort[T constraints.Slice[E], E constraints.Ordered](arr T) T {
 
 func main() {
     fmt.Println(sort([]int{3,1,2}))
+    fmt.Println(sort([]float64{6.2,7.91,2.1}))
 }
