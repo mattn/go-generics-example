@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 type comparable interface {
@@ -9,32 +9,31 @@ type comparable interface {
 }
 
 func max[T comparable](a []T) T {
-    m := a[0]
-    for _, v := range a {
-        if m < v {
-            m = v
-        }
-    }
-    return m
+	m := a[0]
+	for _, v := range a {
+		if m < v {
+			m = v
+		}
+	}
+	return m
 }
 
 func min[T comparable](a []T) T {
-    m := a[0]
-    for _, v := range a {
-        if m > v {
-            m = v
-        }
-    }
-    return m
+	m := a[0]
+	for _, v := range a {
+		if m > v {
+			m = v
+		}
+	}
+	return m
 }
 
 func main() {
-    vi := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-    result := max(vi)
-    fmt.Println(result)
+	vi := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	result := max(vi)
+	fmt.Println(result)
 
-    vi = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-    result = min(vi)
-    fmt.Println(result)
+	vi = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	result = min(vi)
+	fmt.Println(result)
 }
-
