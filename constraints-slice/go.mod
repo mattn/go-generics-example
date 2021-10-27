@@ -1,3 +1,3 @@
-module github.com/mattn/go-generics-example/constraints1
+module github.com/mattn/go-generics-example/constraints-slice
 
 go 1.18
