@@ -12,7 +12,7 @@ $ go build -gcflags=-G=3
 
 Go 1.17 or later
 
-## Third-party
+## Third-party packages that support Generics
 
 - [go-generics-cache](https://github.com/Code-Hex/go-generics-cache)
 
