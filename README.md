@@ -14,8 +14,8 @@ Go 1.17 or later
 
 ## Third-party packages that support Generics
 
-- [go-generics-cache](https://github.com/Code-Hex/go-generics-cache)
-- [dogs](https://github.com/genkami/dogs)
+- [go-generics-cache](https://github.com/Code-Hex/go-generics-cache) An in-memory key:value store/cache library written in Go 1.18 generics
+- [dogs](https://github.com/genkami/dogs) Dogs is a library that provides some useful types and functions borrowed from functional languages.
 
 ## Advertise
 
