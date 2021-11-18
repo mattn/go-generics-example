@@ -15,6 +15,7 @@ Go 1.17 or later
 ## Third-party packages that support Generics
 
 - [go-generics-cache](https://github.com/Code-Hex/go-generics-cache)
+- [dogs](https://github.com/genkami/dogs)
 
 ## Advertise
 
