@@ -24,7 +24,7 @@ func (c *Counter[T]) MinusCounter() T {
 	return c.t
 }
 
-func NewCounter[T Int64](t T, counter T) NumberPlayer[T] {
+func NewNumberPlayer[T Int64](t T, counter T) NumberPlayer[T] {
 	return &Counter[T]{
 		t: t,
 		counter: counter,
@@ -32,11 +32,11 @@ func NewCounter[T Int64](t T, counter T) NumberPlayer[T] {
 }
 
 func main() {
-	numbers := NewCounter(int64(32), int64(2))
+	numbers := NewNumberPlayer(int64(32), int64(2))
 	println(numbers.AddCounter())
 	println(numbers.MinusCounter())
 
-	numbersAgain := NewCounter(uint64(32), uint64(9))
+	numbersAgain := NewNumberPlayer(uint64(32), uint64(9))
 	println(numbersAgain.AddCounter())
 	println(numbersAgain.MinusCounter())
 }
