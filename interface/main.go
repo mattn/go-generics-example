@@ -24,7 +24,7 @@ func (c *Counter[T]) MinusCounter() T {
 	return c.t
 }
 
-func NewCounter[T Int64](t T, counter T) *Counter[T] {
+func NewCounter[T Int64](t T, counter T) NumberPlayer[T] {
 	return &Counter[T]{
 		t: t,
 		counter: counter,
