@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func reduceFunc[T any](a []T, f func(T, T) T, initial interface{}) T {
+func reduceFunc[T any](a []T, f func(T, T) T, initial T) T {
 	if len(a) == 0 || f == nil {
 		var vv T
 		return vv
@@ -24,11 +24,7 @@ func reduceFunc[T any](a []T, f func(T, T) T, initial interface{}) T {
 		return result
 	}
 
-	if initial == nil {
-		return reduce(a, f, a[0], 1, 1, l-1)
-	}
-
-	return reduce(a, f, initial.(T), 0, 1, l)
+	return reduce(a, f, initial, 0, 1, l)
 }
 
 func main() {

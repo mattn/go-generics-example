@@ -13,7 +13,7 @@ func (l *List[T]) Push(v T) {
 }
 
 func (l *List[T]) Insert(v T) {
-	l.l, l.l[0] = append(l.l[:1], l.l[0:]...), v
+	l.InsertAt(0, v)
 	return
 }
 
