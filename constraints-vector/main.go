@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-type v[T constraints.Ordered] T
+// type v[T constraints.Ordered] T
 
 type Vector[T constraints.Ordered] struct {
 	x, y T

@@ -1,12 +1,11 @@
 package main
 
 import (
-	"constraints"
 	"context"
 	"fmt"
 )
 
-func makeChan[T constraints.Chan[E], E any](ctx context.Context, arr []E) T {
+func makeChan[T chan E, E ~int](ctx context.Context, arr []E) T {
 	ch := make(T)
 	go func() {
 		defer close(ch)
