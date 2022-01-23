@@ -33,3 +33,21 @@ func BenchmarkWithGenerics(b *testing.B) {
 		_ = add("foo", "bar")
 	}
 }
+
+func addInterface(a, b interface{}) interface{} {
+	switch v := a.(type) {
+	case int:
+		return v + b.(int)
+	case string:
+		return v + b.(string)
+	default:
+		panic("unrecognized type")
+	}
+}
+
+func BenchmarkWithInterface(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = addInterface(1, 2)
+		_ = addInterface("foo", "bar")
+	}
+}
