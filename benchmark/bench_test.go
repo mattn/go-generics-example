@@ -47,7 +47,7 @@ func addInterface(a, b interface{}) interface{} {
 
 func BenchmarkWithInterface(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = addInterface(1, 2)
-		_ = addInterface("foo", "bar")
+		_ = addInterface(1, 2).(int)
+		_ = addInterface("foo", "bar").(string)
 	}
 }
