@@ -1,4 +1,4 @@
-# constraints-slice
+# constraints-vector
 
 This example no longer works
 

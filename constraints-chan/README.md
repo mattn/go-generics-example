@@ -1,4 +1,4 @@
-# constraints-slice
+# constraints-chan
 
 This example no longer works
 
