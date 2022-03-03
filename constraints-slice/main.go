@@ -1,8 +1,9 @@
 package main
 
 import (
-	"constraints"
 	"fmt"
+
+	"golang.org/x/exp/constraints"
 )
 
 func sort[T []E, E constraints.Ordered](arr T) T {
