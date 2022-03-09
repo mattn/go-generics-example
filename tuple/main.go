@@ -14,7 +14,7 @@ func zip2[T1, T2 any, tuple tuple2[T1, T2]](v1 []T1, v2 []T2) []tuple {
 	if len(v1) != len(v2) {
 		panic("length of v1 and v2 must be same")
 	}
-	vv := make([]tuple, len(v1), len(v2))
+	vv := make([]tuple, len(v1), cap(v1))
 	for i := range v1 {
 		vv[i].V1 = v1[i]
 		vv[i].V2 = v2[i]
