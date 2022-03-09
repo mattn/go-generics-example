@@ -11,7 +11,10 @@ type tuple2[T1, T2 any] struct {
 }
 
 func zip2[T1, T2 any, tuple tuple2[T1, T2]](v1 []T1, v2 []T2) []tuple {
-	vv := make([]tuple, len(v1))
+	if len(v1) != len(v2) {
+		panic("length of v1 and v2 must be same")
+	}
+	vv := make([]tuple, len(v1), len(v2))
 	for i := range v1 {
 		vv[i].V1 = v1[i]
 		vv[i].V2 = v2[i]
@@ -30,14 +33,10 @@ func unzip2[T1, T2 any, tuple tuple2[T1, T2]](vv []tuple) ([]T1, []T2) {
 }
 
 func shuffle[T any](a []T) []T {
-	n := len(a)
-	v := make([]T, len(a))
-	copy(v, a)
-	for i := n - 1; i >= 0; i-- {
-		j := rand.Intn(i + 1)
-		v[i], v[j] = v[j], v[i]
-	}
-	return v
+	rand.Shuffle(len(a), func(i, j int) {
+		a[i], a[j] = a[j], a[i]
+	})
+	return a
 }
 
 func main() {
