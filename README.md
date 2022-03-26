@@ -10,7 +10,7 @@ $ go build -gcflags=-G=3
 
 ## Requirements
 
-Go 1.17 or later
+Go 1.18 or later
 
 ## Third-party packages that support Generics
 
