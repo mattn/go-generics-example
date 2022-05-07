@@ -10,11 +10,11 @@ type tuple2[T1, T2 any] struct {
 	V2 T2
 }
 
-func zip2[T1, T2 any, tuple tuple2[T1, T2]](v1 []T1, v2 []T2) []tuple {
+func zip2[T1, T2 any](v1 []T1, v2 []T2) []tuple2[T1, T2] {
 	if len(v1) != len(v2) {
 		panic("length of v1 and v2 must be same")
 	}
-	vv := make([]tuple, len(v1), cap(v1))
+	vv := make([]tuple2[T1, T2], len(v1), cap(v1))
 	for i := range v1 {
 		vv[i].V1 = v1[i]
 		vv[i].V2 = v2[i]
@@ -22,7 +22,7 @@ func zip2[T1, T2 any, tuple tuple2[T1, T2]](v1 []T1, v2 []T2) []tuple {
 	return vv
 }
 
-func unzip2[T1, T2 any, tuple tuple2[T1, T2]](vv []tuple) ([]T1, []T2) {
+func unzip2[T1, T2 any](vv []tuple2[T1, T2]) ([]T1, []T2) {
 	v1 := make([]T1, len(vv))
 	v2 := make([]T2, len(vv))
 	for i, v := range vv {
