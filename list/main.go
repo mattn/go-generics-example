@@ -19,7 +19,7 @@ func (l *List[T]) Insert(v T) {
 
 func (l *List[T]) InsertAt(pos int, v T) {
 	l.l = append(l.l[:pos+1], l.l[pos:]...)
-	l.l[0] = v
+	l.l[pos] = v
 	return
 }
 
