@@ -7,6 +7,10 @@ import (
 )
 
 func uniq[T comparable](a []T) []T {
+	if len(a) < 2 {
+	    return a
+	}
+	
 	u := make([]T, 0, len(a))
 	m := make(map[T]bool)
 	for _, v := range a {
